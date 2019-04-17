@@ -1,8 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-FNAME=forloop-add-test
-NUM=20000
-bash -c "time ./$FNAME.php $NUM"
-bash -c "time ./$FNAME.py  $NUM"
-bash -c "time ./$FNAME-c   $NUM"
-bash -c "time ./$FNAME-rs  $NUM"
+function test() {
+    echo
+    echo -n $1" "
+    bash -c "time ./forloop-add-test$1 20000"
+}
+
+test .php
+test .py
+test .lua
+test -c-O2
+test -c-Ofast
+test -rs
