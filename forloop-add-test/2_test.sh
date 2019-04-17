@@ -7,6 +7,7 @@ function test() {
 }
 
 test .php
+test .js
 test .py
 test .lua
 test -c-O2
