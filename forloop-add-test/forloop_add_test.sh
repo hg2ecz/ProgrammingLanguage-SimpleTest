@@ -6,7 +6,7 @@ function main() {
 
     for ((i=0; i<$toval; i++)); do
         for ((j=0; j<$toval; j++)); do
-            sumval=$(( $sumval+$i+$(( $j^1 )) ))
+            (( sumval += i+(j^1) ))
         done
     done
     echo 'Bash: ' $sumval;
