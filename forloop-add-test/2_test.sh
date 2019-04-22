@@ -31,6 +31,7 @@ test .exe
 echo "---- script ... -O2 ---"
 test .lua
 test .py
+test .py2
 test .js
 test .php
 test .pl
