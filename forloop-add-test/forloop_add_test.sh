@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-toval=2000
+toval=$1
 sumval=0
 
 for ((i=0; i<$toval; i++)); do
