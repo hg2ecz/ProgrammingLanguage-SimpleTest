@@ -6,7 +6,7 @@ Running times (seconds):
 
 <table border="1">
 <tr><th>Language</th><th>i5-3337u</th></tr>
-<tr><td>bash</td><td>~3800</td></tr>
+<tr><td>bash</td><td>~2800</td></tr>
 <tr><td>awk</td><td>75</td></tr>
 <tr><td>perl</td><td>47.4</td></tr>
 <tr><td>php7.2</td><td>10.8</td></tr>
