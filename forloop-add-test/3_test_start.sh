@@ -20,7 +20,6 @@ test -go-O2
 
 echo "---- bytecode ---"
 test .exe
-#test java
 
 echo "---- script ... -O2 ---"
 test .lua
