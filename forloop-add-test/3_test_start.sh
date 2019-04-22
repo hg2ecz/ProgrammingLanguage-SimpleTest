@@ -8,10 +8,10 @@ function test() {
 
 test -rs
 test -rs
-echo "---- binary ... -Ofast ---"
-test -c-Ofast
-test -d-Ofast
-test -go-Ofast
+#echo "---- binary ... -Ofast ---"
+#test -c-Ofast
+#test -d-Ofast
+#test -go-Ofast
 
 echo "---- binary ... -O2 ---"
 test -c-O2
@@ -22,8 +22,9 @@ echo "---- bytecode ---"
 test .exe
 
 echo "---- script ... -O2 ---"
-test .lua
+test .py-numba
 test .py
+test .lua
 test .js
 test .php
 test .pl

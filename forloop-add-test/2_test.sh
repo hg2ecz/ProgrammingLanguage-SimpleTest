@@ -29,8 +29,9 @@ echo "---- byte code ---"
 test .exe
 
 echo "---- script ... -O2 ---"
-test .lua
+test .py-numba
 test .py
+test .lua
 test .js
 test .php
 test .pl
