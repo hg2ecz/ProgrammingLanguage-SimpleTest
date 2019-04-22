@@ -2,7 +2,8 @@
 
 use strict;
 
-sub main($toval) {
+sub main {
+    my ($toval) = @_;
     my $sumval = 0;
     for (my $i=0; $i < $toval; $i++) {
         for (my $j=0; $j < $toval; $j++) {
