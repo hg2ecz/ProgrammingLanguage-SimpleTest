@@ -21,6 +21,9 @@ echo "---- binary ... -O2 ---"
 test -c-O2
 test -d-O2
 test -go-O2
+
+echo "---- bytecode ---"
+test .exe
 #test java
 
 echo "---- script ... -O2 ---"

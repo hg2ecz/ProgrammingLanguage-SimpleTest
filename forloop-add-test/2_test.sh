@@ -28,7 +28,10 @@ echo "---- binary ... -O2 ---"
 test -c-O2
 test -d-O2
 test -go-O2
-test java
+
+echo "---- byte code ---"
+test .exe
+#test java
 
 echo "---- script ... -O2 ---"
 test .lua
