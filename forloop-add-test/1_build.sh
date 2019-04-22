@@ -11,3 +11,5 @@ gccgo -Wall -O2 -s $FNAME.go -o $FNAME-go-O2
 gccgo -Wall -Ofast -march=native -s $FNAME.go -o $FNAME-go-Ofast
 
 rustc -O -C link-arg=-s $FNAME.rs -o $FNAME-rs
+
+javac forloop_add_test.java
