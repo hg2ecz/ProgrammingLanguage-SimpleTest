@@ -31,6 +31,7 @@ test .py
 test .js
 test .php
 test .pl
+test .awk
 
 echo "---- slow script ----"
 testslow .sh
