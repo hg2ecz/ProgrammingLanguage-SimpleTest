@@ -28,7 +28,7 @@ test -go-O2
 echo "---- byte code ---"
 test .exe
 
-echo "---- script ... -O2 ---"
+echo "---- script ---"
 test .py-numba
 test .py
 test .lua
