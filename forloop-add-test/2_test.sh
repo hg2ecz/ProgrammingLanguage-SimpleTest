@@ -3,11 +3,7 @@
 function realtest() {
     echo
     echo -n "$1 ($2 * $2) "
-    if [ $1 == 'java' ]; then
-        bash -c "time java forloop_add_test $2"
-    else
-        bash -c "time ./forloop_add_test$1 $2"
-    fi
+    bash -c "time ./forloop_add_test$1 $2"
 }
 
 function test() {
@@ -31,7 +27,6 @@ test -go-O2
 
 echo "---- byte code ---"
 test .exe
-#test java
 
 echo "---- script ... -O2 ---"
 test .lua
