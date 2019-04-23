@@ -12,7 +12,7 @@ if [ $# -ne 1 ]; then
 fi
 
 for fname in *forloop_add_test*; do
-    if [ $fname == 'forloop_add_test.sh' -o $fname == 'forloop_add_test.m' ]; then
+    if [ $fname == 'forloop_add_test.sh' -o $fname == 'forloop_add_test.m' -o ${fname:0:9} == "calconly_" ]; then
         runtimetest ./$fname $[ $1/10 ]
     elif [ $fname == 'forloop_add_test-forth.sh' ]; then
         ./forloop_add_test-forth.sh $1
