@@ -16,6 +16,7 @@ SLOW=$[ $NORMAL / 10 ]
 
 for fname in *forloop_add_test*; do
     if [ $fname == 'forloop_add_test.sh' -o $fname == 'forloop_add_test.m' -o ${fname:0:9} == "calconly_" ]; then
+        echo "--- SLOW ----"
         runtimetest ./$fname $SLOW          # slow running program
     elif [ $fname == 'forloop_add_test-forth.sh' ]; then
         ./forloop_add_test-forth.sh $NORMAL

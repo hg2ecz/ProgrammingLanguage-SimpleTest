@@ -11,14 +11,16 @@ if [ $# -ne 1 ]; then
     exit
 fi
 
-NORMAL= $1
-SLOW= $[ $NORMAL / 10 ]
+NORMAL=$1
+SLOW=$[ $NORMAL / 10 ]
 
 for fname in *forloop_add_test*; do
     if [ $fname == 'forloop_add_test-forth.sh' ]; then
         ./forloop_add_test-forth.sh 1
         starttimetest /tmp/forth.fs $NORMAL # real test
-    elif [ $fname == 'forloop_add_test.jl' -o $fname == 'forloop_add_test.js' -o 'forloop_add_test.m' ]; then
+    elif [ $fname == 'forloop_add_test.jl' -o $fname == 'forloop_add_test.js' \
+        -o $fname == 'forloop_add_test.m'  -o $fname == 'forloop_add_test.py-numba' ]; then
+        echo "--- SLOW ----"
         starttimetest ./$fname $SLOW        # slow startable program
     else
         starttimetest ./$fname $NORMAL
