@@ -12,9 +12,12 @@ if [ $# -ne 1 ]; then
 fi
 
 for fname in *forloop_add_test*; do
-    if [ $fname != 'forloop_add_test.sh' ]; then
-        runtimetest $fname $1
-    else
+    if [ $fname == 'forloop_add_test.sh' ]; then
         runtimetest $fname $[ $1/10 ]
+    elif [ $fname == 'forloop_add_test-forth.sh' ]; then
+        ./forloop_add_test-forth.sh $1
+        runtimetest /tmp/forth.fs $1   # real test
+    else
+        runtimetest $fname $1
     fi
 done
