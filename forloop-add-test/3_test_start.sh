@@ -3,7 +3,7 @@
 function starttimetest() {
     echo
     echo -n "$1 ($2x start) "
-    bash -c "time (for i in {0..$2}; do $1 0; done 2>&1 > /dev/null)"
+    bash -c "time (for i in {0..$2}; do $1 0 2>/dev/null; done > /dev/null)"
 }
 
 if [ $# -ne 1 ]; then
@@ -19,8 +19,9 @@ for fname in *forloop_add_test*; do
         ./forloop_add_test-forth.sh 1
         starttimetest /tmp/forth.fs $NORMAL # real test
     elif [ $fname == 'forloop_add_test.jl' -o $fname == 'forloop_add_test.js' \
-        -o $fname == 'forloop_add_test.m'  -o $fname == 'forloop_add_test.py-numba' ]; then
-        echo "--- SLOW ----"
+        -o $fname == 'forloop_add_test.m'  -o $fname == 'forloop_add_test.py-numba' \
+        -o $fname == 'forloop_add_test.r' ]; then
+        echo -n "--- SLOW ---"
         starttimetest ./$fname $SLOW        # slow startable program
     else
         starttimetest ./$fname $NORMAL
