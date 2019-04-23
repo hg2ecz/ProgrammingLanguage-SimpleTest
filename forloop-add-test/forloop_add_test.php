@@ -7,7 +7,7 @@ function main($toval) {
             $sumval += $i+($j^1);
         }
     }
-    echo 'PHP: ', $sumval;
+    echo 'PHP: ', $sumval, "\n";
 }
 
 main( intval($argv[1]) )
