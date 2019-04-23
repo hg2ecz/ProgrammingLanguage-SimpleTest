@@ -1,4 +1,6 @@
-#!/usr/bin/env cal
+#!/usr/bin/env bash
+
+calc -d -q -s -- $1 << CALEOT
 
 define main(toval) {
     local i, j, sumval=0;
@@ -11,3 +13,5 @@ define main(toval) {
 }
 
 main(eval(argv(1)));
+quit;
+CALEOT

@@ -1,33 +1,21 @@
 #!/bin/bash
 
-function test() {
+function starttimetest() {
     echo
-    echo -n "$1 (1000x start) "
-    bash -c "time (for i in {0..1000}; do ./forloop_add_test$1 0; done > /dev/null)"
+    echo -n "$1 ($2x start) "
+    bash -c "time (for i in {0..$2}; do $1 0; done > /dev/null)"
 }
 
-test -rs
-test -rs
-#echo "---- binary ... -Ofast ---"
-#test -c-Ofast
-#test -d-Ofast
-#test -go-Ofast
+if [ $# -ne 1 ]; then
+    echo 'Require loop number (e.g. 20000)'
+    exit
+fi
 
-echo "---- binary ... -O2 ---"
-test -c-O2
-test -d-O2
-test -go-O2
-
-echo "---- bytecode ---"
-test .exe
-
-echo "---- script ---"
-test .py-numba
-test .py
-test .lua
-test .js
-test .php
-test .pl
-test .awk
-
-test .sh
+for fname in *forloop_add_test*; do
+    if [ $fname == 'forloop_add_test-forth.sh' ]; then
+        ./forloop_add_test-forth.sh 1
+        starttimetest /tmp/forth.fs $1   # real test
+    else
+        starttimetest ./$fname $1
+    fi
+done

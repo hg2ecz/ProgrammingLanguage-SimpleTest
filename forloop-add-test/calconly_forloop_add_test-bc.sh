@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat << BCEND | bc
+bc << BCEND
 define main(toval) {
     auto i, j, sumval
     sumval = 0

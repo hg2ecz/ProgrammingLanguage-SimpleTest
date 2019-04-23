@@ -1,4 +1,4 @@
-#!/usr/bin/gawk -f
+#!/usr/bin/env -S gawk -f
 
 function main(toval) {
     sumval=0

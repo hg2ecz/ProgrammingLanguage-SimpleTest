@@ -1,15 +1,21 @@
 #!/bin/bash
 
 FNAME=forloop_add_test
-gcc -Wall -O2 -s $FNAME.c -o $FNAME-c-O2
-gcc -Wall -Ofast -march=native -funroll-all-loops -s $FNAME.c -o $FNAME-c-Ofast
 
-gdc -Wall -O2 -s $FNAME.d -o $FNAME-d-O2
-gdc -Wall -Ofast -march=native -s $FNAME.d -o $FNAME-d-Ofast
+gcc   -Wall -O2                                     -s src/$FNAME.c -o $FNAME-gcc-O2
+gcc   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-gcc-Ofast
 
-gccgo -Wall -O2 -s $FNAME.go -o $FNAME-go-O2
-gccgo -Wall -Ofast -march=native -s $FNAME.go -o $FNAME-go-Ofast
+clang -Wall -O2                                     -s src/$FNAME.c -o $FNAME-clang-O2
+clang -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-clang-Ofast
 
-rustc -O -C link-arg=-s $FNAME.rs -o $FNAME-rs
+gdc   -Wall -O2                  -s src/$FNAME.d -o $FNAME-d-O2
+gdc   -Wall -Ofast -march=native -s src/$FNAME.d -o $FNAME-d-Ofast
+
+gccgo -Wall -O2                  -s src/$FNAME.go -o $FNAME-go-O2
+gccgo -Wall -Ofast -march=native -s src/$FNAME.go -o $FNAME-go-Ofast
+
+rustc -O -C link-arg=-s src/$FNAME.rs -o $FNAME-rs
+
+mcs src/$FNAME.cs -out:$FNAME.exe
 
 #javac forloop_add_test.java

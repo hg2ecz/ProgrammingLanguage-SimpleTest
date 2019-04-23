@@ -1,4 +1,4 @@
-#!/usr/bin/env octave
+#!/usr/bin/env -S octave -q
 
 felesleges_de_kell_ide_egy_ertekadas = 0;
 
