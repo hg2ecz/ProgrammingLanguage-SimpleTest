@@ -7,7 +7,7 @@ function starttimetest() {
 }
 
 if [ $# -ne 1 ]; then
-    echo 'Require program start number (e.g. 100)'
+    echo 'Require program start number (e.g. 1000)'
     exit
 fi
 
