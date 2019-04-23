@@ -7,7 +7,7 @@ function starttimetest() {
 }
 
 if [ $# -ne 1 ]; then
-    echo 'Require loop number (e.g. 20000)'
+    echo 'Require program start number (e.g. 100)'
     exit
 fi
 
