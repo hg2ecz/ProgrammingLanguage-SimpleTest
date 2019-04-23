@@ -8,6 +8,6 @@ def main(toval):
         for j in range(0, toval):
             sumval += i+(j^1)
 
-    print ('Pypy:', sumval)
+    print ('cPython3:', sumval)
 
 main( int(sys.argv[1]) )
