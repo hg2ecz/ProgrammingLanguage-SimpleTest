@@ -11,13 +11,16 @@ if [ $# -ne 1 ]; then
     exit
 fi
 
+NORMAL=$1
+SLOW=$[ $NORMAL / 10 ]
+
 for fname in *forloop_add_test*; do
     if [ $fname == 'forloop_add_test.sh' -o $fname == 'forloop_add_test.m' -o ${fname:0:9} == "calconly_" ]; then
-        runtimetest ./$fname $[ $1/10 ]
+        runtimetest ./$fname $SLOW          # slow running program
     elif [ $fname == 'forloop_add_test-forth.sh' ]; then
-        ./forloop_add_test-forth.sh $1
-        runtimetest /tmp/forth.fs $1   # real test
+        ./forloop_add_test-forth.sh $NORMAL
+        runtimetest /tmp/forth.fs $NORMAL   # real test
     else
-        runtimetest ./$fname $1
+        runtimetest ./$fname $NORMAL
     fi
 done
