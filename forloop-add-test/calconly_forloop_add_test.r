@@ -7,7 +7,7 @@ main <- function(toval) {
             sumval <- sumval + i + (j^1)
         }
     }
-    print(sumval)
+    message("r: ", sumval)
 }
 
 args <- commandArgs(trailingOnly=TRUE)
