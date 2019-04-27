@@ -17,5 +17,6 @@ gccgo -Wall -Ofast -march=native -s src/$FNAME.go -o $FNAME-go-Ofast
 rustc -O -C link-arg=-s src/$FNAME.rs -o $FNAME-rs
 
 mcs src/$FNAME.cs -out:$FNAME.exe
+fpc -O4 -Op3 src/$FNAME.pas -o./$FNAME-pas
 
 #javac forloop_add_test.java
