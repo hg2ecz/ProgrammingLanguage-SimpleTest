@@ -7,5 +7,5 @@ begin
     for i:=0 to toval-1 do
         for j:=0 to toval-1 do
             inc(sumval, i+(j xor 1));
-    writeln(sumval);
+    writeln('Pascal: ', sumval);
 end.
