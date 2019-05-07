@@ -14,7 +14,8 @@ FNAME=all_words_once
 #gccgo -Wall -O2                  -s src/$FNAME.go -o $FNAME-go-O2
 #gccgo -Wall -Ofast -march=native -s src/$FNAME.go -o $FNAME-go-Ofast
 
-rustc -O -C link-arg=-s src/$FNAME.rs -o $FNAME-rs
+rustc -O -C link-arg=-s src/$FNAME\1.rs -o $FNAME-rs1
+rustc -O -C link-arg=-s src/$FNAME\2.rs -o $FNAME-rs2
 
 #mcs src/$FNAME.cs -out:$FNAME.exe
 #fpc -O4 -Op3 src/$FNAME.pas -o./$FNAME-pas; rm -f $FNAME.o
