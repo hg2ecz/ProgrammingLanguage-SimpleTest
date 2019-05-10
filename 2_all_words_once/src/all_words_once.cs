@@ -4,7 +4,7 @@ using System.Linq;
 
 class Program {
     static (string WordList, int Count) remove_dup_words(string inputString) {
-        var wordlist = inputString.Split(' ', '\t', '\f', '\n', '\r')
+        var wordlist = inputString.Split()
                                   .Where(s => !string.IsNullOrWhiteSpace(s))
                                   .ToHashSet();
 
