@@ -5,7 +5,7 @@
 apt update
 apt install gcc clang g++ gdc gccgo fp-compiler cargo mono-mcs
 apt install php-cli python3-numba pypy3 luajit node ruby perl
-apt install octave julia r-base
+apt install octave julia r-base default-jdk
 apt install gawk bc dc apcalc gforth
 
 snap install --classic kotlin
