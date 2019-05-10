@@ -3,7 +3,11 @@
 function runtimetest() {
     echo
     echo -n "$1 ($2 * $2) "
-    bash -c "time $1 $2"
+    if [ ${1: -4:4} == '.jar' ]; then
+        bash -c "time java -jar $1 $2"
+    else
+        bash -c "time $1 $2"
+    fi
 }
 
 if [ $# -ne 1 ]; then
@@ -13,12 +17,13 @@ fi
 
 NORMAL=$1
 SLOW=$[ $NORMAL / 10 ]
+FILENAME=forloop_add_test
 
 for fname in *forloop_add_test*; do
-    if [ $fname == 'forloop_add_test.sh' -o $fname == 'forloop_add_test.m' -o ${fname:0:9} == "calconly_" ]; then
+    if [ $fname == $FILENAME.sh -o $fname == $FILENAME.m -o ${fname: 0:9} == "calconly_" ]; then
         echo -n "--- SLOW ---"
         runtimetest ./$fname $SLOW          # slow running program
-    elif [ $fname == 'forloop_add_test-forth.sh' ]; then
+    elif [ $fname == $FILENAME\-forth.sh ]; then
         ./forloop_add_test-forth.sh $NORMAL
         runtimetest /tmp/forth.fs $NORMAL   # real test
     else

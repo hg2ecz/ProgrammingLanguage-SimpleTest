@@ -1,4 +1,4 @@
-class forloop_add_test {
+class Forloop_add_test {
     public static void main(String[] args) {
         long toval = Long.parseLong(args[0], 10);
         long i, j, sumval = 0;

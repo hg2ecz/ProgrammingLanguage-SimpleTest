@@ -19,4 +19,9 @@ rustc -O -C link-arg=-s src/$FNAME.rs -o $FNAME-rs
 mcs src/$FNAME.cs -out:$FNAME.exe
 fpc -O4 -Op3 src/$FNAME.pas -o./$FNAME-pas; rm -f $FNAME.o
 
-#javac forloop_add_test.java
+pushd .; cd src
+  javac $FNAME.java
+  jar -cvmf MANIFEST.MF ../$FNAME-java.jar $FNAME.class
+popd
+
+kotlinc src/$FNAME.kt -include-runtime -d $FNAME-kotlin.jar

@@ -3,7 +3,11 @@
 function starttimetest() {
     echo
     echo -n "$1 ($2x start) "
-    bash -c "time (for i in {0..$2}; do $1 0 2>/dev/null; done > /dev/null)"
+    if [ ${1: -4:4} == '.jar' ]; then
+        bash -c "time (for i in {0..$2}; do java -jar $1 0 2>/dev/null; done > /dev/null)"
+    else
+        bash -c "time (for i in {0..$2}; do $1 0 2>/dev/null; done > /dev/null)"
+    fi
 }
 
 if [ $# -ne 1 ]; then
