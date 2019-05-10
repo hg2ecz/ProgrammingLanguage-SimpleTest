@@ -28,8 +28,7 @@ class Program {
             result = remove_dup_words(contents);
         }
 
-        Console.WriteLine($"Szavak száma: {result.Count}");
-        Console.WriteLine($"Szavak: {result.WordList}");
+        Console.WriteLine($"{result.WordList}");
         Console.Error.WriteLine("CSharp");
     }
 }
