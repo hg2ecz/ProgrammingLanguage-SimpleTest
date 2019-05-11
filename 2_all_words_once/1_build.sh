@@ -4,9 +4,11 @@ FNAME=all_words_once
 
 #gcc   -Wall -O2                                     -s src/$FNAME.c -o $FNAME-gcc-O2
 #gcc   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-gcc-Ofast
+g++   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.cpp -o $FNAME-g++-Ofast
 
 #clang -Wall -O2                                     -s src/$FNAME.c -o $FNAME-clang-O2
 #clang -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-clang-Ofast
+#clang++ -Wall -O2                                     -s src/$FNAME.cpp -o $FNAME-clang-O2
 
 #gdc   -Wall -O2                  -s src/$FNAME.d -o $FNAME-d-O2
 #gdc   -Wall -Ofast -march=native -s src/$FNAME.d -o $FNAME-d-Ofast
