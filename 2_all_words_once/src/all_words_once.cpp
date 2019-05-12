@@ -8,7 +8,7 @@
 using namespace std;
 
 string remove_dup_words(stringstream* wordstream) {
-    set<string> words;
+    unordered_set<string> words;
     vector<string> v;
     ostringstream oss;
     string word;
