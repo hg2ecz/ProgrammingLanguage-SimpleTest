@@ -105,5 +105,5 @@ int main(int argc, char *argv[]) {
         res = remove_dup_words(out, contents, hashset);
     }
     if (res) printf("%s", res);
-    fprintf(stderr, "C");
+    fprintf(stderr, "C\n");
 }
