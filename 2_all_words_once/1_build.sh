@@ -3,7 +3,7 @@
 FNAME=all_words_once
 
 #gcc   -Wall -O2                                     -s src/$FNAME.c -o $FNAME-gcc-O2
-#gcc   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-gcc-Ofast
+gcc   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.c -o $FNAME-gcc-Ofast
 g++   -Wall -Ofast -march=native -funroll-all-loops -s src/$FNAME.cpp -o $FNAME-g++-Ofast
 
 #clang -Wall -O2                                     -s src/$FNAME.c -o $FNAME-clang-O2
