@@ -14,6 +14,8 @@ gdc   -Wall -Ofast -march=native -s src/$FNAME.d -o $FNAME-d-Ofast
 gccgo -Wall -O2                  -s src/$FNAME.go -o $FNAME-go-O2
 gccgo -Wall -Ofast -march=native -s src/$FNAME.go -o $FNAME-go-Ofast
 
+nim c src/$FNAME.nim; mv src/$FNAME $FNAME-nim
+
 rustc -O -C link-arg=-s src/$FNAME.rs -o $FNAME-rs
 
 mcs src/$FNAME.cs -out:$FNAME.exe
